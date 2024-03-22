@@ -1,5 +1,6 @@
 import countriesData from "../mocks/data.json";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export function Countries() {
 
@@ -159,39 +160,41 @@ export function Countries() {
                 <ul>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 py-10 px-6 mx-6 gap-10 dark:bg-veryDarkBlue">
                         {filteredCountries.map((country) => (
-                            <li
-                                className=" rounded-lg shadow bg-white dark:border-gray-700 dark:text-white  dark:hover-bg-slate-900 dark:bg-darkBlue"
-                                key={country.numericCode}
-                            >
-                                
-                                <img
-                                    src={country.flags.png}
-                                    alt={country.name}
-                                    className=" w-72 h-40  rounded-md"
-                                />
-                                <div className="p-5 mb-3 font-normal text-black dark:text-white dark:hover-bg-slate-900  dark:bg-darkBlue">
-                                    <strong>{country.name}</strong>
-                                    {/* <p>Native Name: {country.nativeName}</p> */}
-                                    <div className="py-6">
-                                        <p>
-                                            <strong>Population:</strong> {country.population}
-                                        </p>
-                                        <p>
-                                            <strong>Region: </strong>
-                                            {country.region}
-                                        </p>
-                                        {/* <p>Subregion: {country.subregion}</p>  */}
-                                        <p>
-                                            <strong>Capital: </strong>
-                                            {country.capital}
-                                        </p>
+                            <Link to={`/country/${country.name}`} key={country.numericCode}>
+
+                                <li
+                                    className=" rounded-lg shadow bg-white dark:border-gray-700 dark:text-white  dark:hover-bg-slate-900 dark:bg-darkBlue"
+                                    key={country.numericCode}
+                                >
+                                    <img
+                                        src={country.flags.png}
+                                        alt={country.name}
+                                        className=" w-72 h-40  rounded-md"
+                                    />
+                                    <div className="p-5 mb-3 font-normal text-black dark:text-white dark:hover-bg-slate-900  dark:bg-darkBlue">
+                                        <strong>{country.name}</strong>
+                                        {/* <p>Native Name: {country.nativeName}</p> */}
+                                        <div className="py-6">
+                                            <p>
+                                                <strong>Population:</strong> {country.population}
+                                            </p>
+                                            <p>
+                                                <strong>Region: </strong>
+                                                {country.region}
+                                            </p>
+                                            {/* <p>Subregion: {country.subregion}</p>  */}
+                                            <p>
+                                                <strong>Capital: </strong>
+                                                {country.capital}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            </Link>
                         ))}
                     </div>
                 </ul>
-            </section>
+            </section >
         </>
     );
 }
