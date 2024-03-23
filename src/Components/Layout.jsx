@@ -5,12 +5,11 @@ import Footer from "./Footer"
 function Layout() {
   return (
     <>
-     <ThemeColor>
-        <Header/>
+      <ThemeColor>
+        <Header />
         <Countries />
-        
-        <Footer/>
       </ThemeColor>
+      <Footer />
     </>
   );
 }

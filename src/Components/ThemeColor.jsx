@@ -25,7 +25,7 @@ function ThemeColor(props) {
 
   return (
     // Renderizamos el componente con el tema actual y un botón para cambiar el tema
-    <div className={`theme-${theme}`}>
+    <div className={`theme-${theme} bg-gray-100 dark:bg-veryDarkBlueS`}>
       {children}
       <button
         onClick={handleChangeTheme}

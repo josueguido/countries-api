@@ -173,7 +173,6 @@ export function Countries() {
                                     />
                                     <div className="p-5 mb-3 font-normal text-black dark:text-white dark:hover-bg-slate-900  dark:bg-darkBlue">
                                         <strong>{country.name}</strong>
-                                        {/* <p>Native Name: {country.nativeName}</p> */}
                                         <div className="py-6">
                                             <p>
                                                 <strong>Population:</strong> {country.population}
@@ -182,7 +181,6 @@ export function Countries() {
                                                 <strong>Region: </strong>
                                                 {country.region}
                                             </p>
-                                            {/* <p>Subregion: {country.subregion}</p>  */}
                                             <p>
                                                 <strong>Capital: </strong>
                                                 {country.capital}
