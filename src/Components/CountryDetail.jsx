@@ -1,13 +1,10 @@
 import countriesData from '../mocks/data.json';
 import { Link, useParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
 function CountryDetail() {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+   
 
     const { countryName } = useParams();
     const country = countriesData.find((country) => country.name === countryName);
